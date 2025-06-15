@@ -72,7 +72,7 @@ function CheckoutPage() {
     try {
       const response = await axios.post("http://localhost:4000/api/orders", orderData);
       const { orderNumber } = response.data;
-      navigate('/thank-you', { state: { orderNumber } });
+      navigate('/thankyou', { state: { orderNumber } });
     } catch (error) {
       if (error.response?.status === 402) {
         alert("❌ Transaction declined. Please check your card.");

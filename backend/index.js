@@ -142,7 +142,7 @@ app.get('/getOrders/:orderNumber', async (req, res) => {
     if (!orders.length) {
       return res.status(404).json({ error: "Order not found" });
     }
-    res.json(orders);
+    return res.json(orders);
   } catch (error) {
     console.error("Error fetching orders:", error);
     res.status(500).json({ error: "Internal Server Error" });
